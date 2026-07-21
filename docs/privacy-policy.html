@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Realtime Subtitle Translator</title>
+    <meta
+      name="description"
+      content="Privacy Policy for the Realtime Subtitle Translator Chrome extension (BYOK)."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --fg: CanvasText;
+        --muted: color-mix(in srgb, CanvasText 58%, Canvas);
+        --border: color-mix(in srgb, CanvasText 14%, Canvas);
+        --accent: #1a73e8;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          "Noto Sans TC",
+          "PingFang TC",
+          sans-serif;
+      }
+      body {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 2rem 1.15rem 4rem;
+        line-height: 1.65;
+        color: var(--fg);
+      }
+      h1 {
+        font-size: 1.65rem;
+        line-height: 1.25;
+        margin: 0 0 0.35rem;
+      }
+      h2 {
+        font-size: 1.1rem;
+        margin: 1.75rem 0 0.5rem;
+      }
+      p,
+      li {
+        font-size: 0.98rem;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0 0 1.5rem;
+      }
+      .lang {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        padding: 0.15rem 0.45rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        vertical-align: middle;
+        margin-right: 0.35rem;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid var(--border);
+        margin: 2rem 0;
+      }
+      a {
+        color: var(--accent);
+      }
+      ul {
+        padding-left: 1.25rem;
+      }
+      .box {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.85rem 1rem;
+        margin: 1rem 0;
+        font-size: 0.95rem;
+      }
+      footer {
+        margin-top: 2.5rem;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Privacy Policy<br /><span style="font-size: 1.05rem; font-weight: 600"
+      >隱私權政策</span
+    ></h1>
+    <p class="meta">
+      Realtime Subtitle Translator (Chrome Extension)<br />
+      Last updated / 最後更新：2026-07-09
+    </p>
+
+    <div class="box">
+      <strong>Summary / 摘要：</strong>
+      This extension uses <em>your own</em> translation API key (BYOK). Your key
+      and settings stay on your device. Caption text is sent only to the
+      translation provider you choose—not to the extension developer.
+      <br /><br />
+      本擴充功能使用<strong>你自己的</strong>翻譯 API
+      key（自備金鑰）。金鑰與設定只存在本機。字幕文字只會送到你選擇的翻譯服務商，不會送到擴充功能作者的伺服器。
+    </div>
+
+    <h2>
+      <span class="lang">EN</span> 1. Who we are
+    </h2>
+    <p>
+      This policy describes how the browser extension
+      <strong>Realtime Subtitle Translator</strong> (“the Extension”) handles
+      information when you install and use it. The Extension translates
+      on-screen YouTube captions into Traditional Chinese (and optional bilingual
+      display) using an OpenAI-compatible API that you configure.
+    </p>
+
+    <h2>
+      <span class="lang">ZH</span> 1. 我們是誰
+    </h2>
+    <p>
+      本政策說明 Chrome 擴充功能
+      <strong>Realtime Subtitle Translator</strong>（「本擴充功能」）在安裝與使用時如何處理資訊。本擴充功能可將
+      YouTube 畫面上的字幕翻譯成繁體中文（可選雙語顯示），並透過你自行設定的
+      OpenAI-compatible API 完成翻譯。
+    </p>
+
+    <h2>
+      <span class="lang">EN</span> 2. Data stored on your device
+    </h2>
+    <p>The Extension may store the following in Chrome local storage (<code>chrome.storage.local</code>) on your computer only:</p>
+    <ul>
+      <li>Selected translation provider and model name</li>
+      <li>API endpoint URL</li>
+      <li>API key you paste into the setup screen</li>
+      <li>Display preferences (for example Chinese-only vs bilingual, enabled/disabled)</li>
+      <li>Whether the first-run setup wizard has been completed</li>
+    </ul>
+    <p>
+      This data is not uploaded to servers operated by the Extension developer.
+      Uninstalling the Extension removes this local storage according to Chrome’s
+      normal behavior.
+    </p>
+
+    <h2>
+      <span class="lang">ZH</span> 2. 儲存在你裝置上的資料
+    </h2>
+    <p>
+      本擴充功能可能僅在你電腦的 Chrome 本機儲存（<code>chrome.storage.local</code>）中保存：
+    </p>
+    <ul>
+      <li>你選擇的翻譯服務與模型名稱</li>
+      <li>API endpoint 網址</li>
+      <li>你在設定精靈中貼上的 API key</li>
+      <li>顯示偏好（例如只顯示繁中 / 雙語、是否啟用）</li>
+      <li>是否已完成首次設定</li>
+    </ul>
+    <p>
+      上述資料<strong>不會</strong>上傳到擴充功能作者營運的伺服器。解除安裝後，將依
+      Chrome 機制清除本機擴充功能資料。
+    </p>
+
+    <h2>
+      <span class="lang">EN</span> 3. Data sent over the network
+    </h2>
+    <p>When the Extension is active on a YouTube page with captions available:</p>
+    <ul>
+      <li>
+        Caption / subtitle text may be sent from your browser to the translation
+        provider you configured (for example OpenAI, OpenRouter, Groq, a local
+        Ollama server, or another OpenAI-compatible endpoint you specify).
+      </li>
+      <li>
+        Requests use the API key you provided (typically as a Bearer token to that
+        provider).
+      </li>
+      <li>
+        The Extension developer does not operate a proxy that receives your API
+        key or caption content by default.
+      </li>
+    </ul>
+    <p>
+      Your use of third-party translation providers is also subject to those
+      providers’ own privacy policies and terms (for example OpenAI’s policies).
+    </p>
+
+    <h2>
+      <span class="lang">ZH</span> 3. 透過網路傳送的資料
+    </h2>
+    <p>當本擴充功能在 YouTube 頁面運作且有可用字幕時：</p>
+    <ul>
+      <li>
+        字幕文字可能會從你的瀏覽器直接傳送到你設定的翻譯服務商（例如
+        OpenAI、OpenRouter、Groq、本機 Ollama，或其他你指定的
+        OpenAI-compatible endpoint）。
+      </li>
+      <li>請求會使用你提供的 API key（通常以 Bearer token 傳給該服務商）。</li>
+      <li>
+        擴充功能作者<strong>預設不營運</strong>會接收你的 API key 或字幕內容的中繼伺服器。
+      </li>
+    </ul>
+    <p>
+      你使用第三方翻譯服務時，同時受該服務商自己的隱私權政策與服務條款拘束（例如
+      OpenAI 的政策）。
+    </p>
+
+    <h2>
+      <span class="lang">EN</span> 4. Data we do not collect
+    </h2>
+    <ul>
+      <li>No developer-operated user accounts for this Extension</li>
+      <li>No analytics SDKs shipped for advertising or cross-site tracking</li>
+      <li>No sale of personal information</li>
+      <li>No intentional collection of payment card data</li>
+    </ul>
+
+    <h2>
+      <span class="lang">ZH</span> 4. 我們不蒐集的資料
+    </h2>
+    <ul>
+      <li>本擴充功能不要求在作者端建立帳號</li>
+      <li>未內建用於廣告或跨站追蹤的分析 SDK</li>
+      <li>不出售個人資訊</li>
+      <li>不蒐集支付卡資料</li>
+    </ul>
+
+    <h2>
+      <span class="lang">EN</span> 5. Permissions
+    </h2>
+    <p>The Extension requests only what it needs for subtitle translation on YouTube:</p>
+    <ul>
+      <li><strong>storage</strong> — save your settings and API key locally</li>
+      <li><strong>Host access to YouTube</strong> — read caption UI / show the overlay</li>
+      <li>
+        <strong>Host access to translation APIs</strong> — call the provider you
+        select (and optional custom HTTPS endpoints)
+      </li>
+    </ul>
+
+    <h2>
+      <span class="lang">ZH</span> 5. 權限說明
+    </h2>
+    <p>本擴充功能只申請字幕翻譯所需權限：</p>
+    <ul>
+      <li><strong>storage</strong> — 在本機儲存設定與 API key</li>
+      <li><strong>YouTube 網站存取</strong> — 讀取字幕介面 / 顯示翻譯疊層</li>
+      <li>
+        <strong>翻譯 API 主機存取</strong> — 呼叫你選擇的翻譯服務（以及可選的自訂
+        HTTPS endpoint）
+      </li>
+    </ul>
+
+    <h2>
+      <span class="lang">EN</span> 6. Children
+    </h2>
+    <p>
+      The Extension is not directed at children under 13, and we do not knowingly
+      collect personal information from children.
+    </p>
+
+    <h2>
+      <span class="lang">ZH</span> 6. 兒童
+    </h2>
+    <p>本擴充功能並非以 13 歲以下兒童為對象，我們不會在知情情況下蒐集兒童的個人資訊。</p>
+
+    <h2>
+      <span class="lang">EN</span> 7. Changes
+    </h2>
+    <p>
+      We may update this policy from time to time. The “Last updated” date at the
+      top will change when we do. Continued use of the Extension after changes
+      means you accept the updated policy.
+    </p>
+
+    <h2>
+      <span class="lang">ZH</span> 7. 政策變更
+    </h2>
+    <p>
+      我們可能不時更新本政策。更新時會修改文首的「最後更新」日期。若你在變更後繼續使用本擴充功能，即表示接受更新後的政策。
+    </p>
+
+    <h2>
+      <span class="lang">EN</span> 8. Contact
+    </h2>
+    <p>
+      For privacy questions about this Extension, contact the publisher via the
+      email address listed on the Chrome Web Store listing, or open an issue on
+      the project repository if one is linked from the listing.
+    </p>
+
+    <h2>
+      <span class="lang">ZH</span> 8. 聯絡方式
+    </h2>
+    <p>
+      若對本擴充功能的隱私有疑問，請透過 Chrome 線上應用程式商店商品頁所載的聯絡信箱與發行者聯繫；若商品頁有連結專案儲存庫，亦可在該處開 issue。
+    </p>
+
+    <hr />
+    <footer>
+      Realtime Subtitle Translator · Privacy Policy · BYOK (Bring Your Own Key)
+    </footer>
+  </body>
+</html>

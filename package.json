@@ -1,0 +1,31 @@
+{
+  "name": "realtime-subtitle-translator",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome extension: YouTube caption → bilingual 繁中 overlay (OpenAI-compatible).",
+  "engines": {
+    "node": ">=22.13.0",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "dev": "wxt",
+    "build": "wxt build",
+    "prepare": "wxt prepare"
+  },
+  "devDependencies": {
+    "happy-dom": "^20.10.6",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.4",
+    "wxt": "^0.20.11"
+  },
+  "overrides": {
+    "adm-zip": "0.6.0",
+    "esbuild": "0.28.1",
+    "shell-quote": "1.10.0",
+    "tmp": "0.2.7",
+    "uuid": "11.1.1"
+  }
+}

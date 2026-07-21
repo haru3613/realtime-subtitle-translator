@@ -1,0 +1,11 @@
+state/
+.env*
+.mc.toml
+CLAUDE.md
+.claude/worktrees/
+.DS_Store
+node_modules/
+.output/
+.wxt/
+dist-store/*.zip
+*.local

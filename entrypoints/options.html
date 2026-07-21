@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Realtime Subtitle Translator — 設定</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: Canvas;
+        --fg: CanvasText;
+        --muted: color-mix(in srgb, CanvasText 55%, Canvas);
+        --card: color-mix(in srgb, CanvasText 6%, Canvas);
+        --border: color-mix(in srgb, CanvasText 16%, Canvas);
+        --accent: #1a73e8;
+        --ok: #0a7a3e;
+        --err: #c33;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          "Noto Sans TC",
+          sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        width: 34rem;
+        max-width: 34rem;
+        margin: 0 auto;
+        padding: 1.5rem 1.1rem 3rem;
+        line-height: 1.5;
+        color: var(--fg);
+        background: var(--bg);
+      }
+      h1 {
+        font-size: 1.35rem;
+        margin: 0 0 0.35rem;
+      }
+      h2 {
+        font-size: 1rem;
+        margin: 0 0 0.5rem;
+      }
+      .hint,
+      .muted {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin: 0 0 1rem;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        margin: 1rem 0;
+      }
+      .steps {
+        display: grid;
+        gap: 0.35rem;
+        margin: 0.75rem 0 0;
+        padding-left: 1.2rem;
+        font-size: 0.95rem;
+      }
+      label.field {
+        display: block;
+        font-weight: 650;
+        margin: 0.9rem 0 0.35rem;
+        font-size: 0.92rem;
+      }
+      select,
+      input[type="text"],
+      input[type="password"],
+      input[type="url"] {
+        width: 100%;
+        padding: 0.55rem 0.65rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font: inherit;
+        background: Canvas;
+        color: CanvasText;
+      }
+      .provider-blurb {
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin: 0.4rem 0 0;
+      }
+      .row {
+        display: flex;
+        gap: 0.65rem;
+        align-items: center;
+        margin-top: 0.85rem;
+        flex-wrap: wrap;
+      }
+      .row label {
+        margin: 0;
+        font-weight: 500;
+        font-size: 0.92rem;
+      }
+      a {
+        color: var(--accent);
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.1rem;
+      }
+      button {
+        padding: 0.6rem 1.05rem;
+        border: 0;
+        border-radius: 8px;
+        background: var(--accent);
+        color: white;
+        font: inherit;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: color-mix(in srgb, CanvasText 22%, Canvas);
+        color: CanvasText;
+      }
+      button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+      }
+      button:hover:not(:disabled) {
+        filter: brightness(1.06);
+      }
+      #status {
+        margin-top: 0.85rem;
+        min-height: 1.35rem;
+        font-size: 0.92rem;
+        white-space: pre-wrap;
+      }
+      #status.ok {
+        color: var(--ok);
+      }
+      #status.err {
+        color: var(--err);
+      }
+      details.advanced {
+        margin-top: 1.25rem;
+        border-top: 1px solid var(--border);
+        padding-top: 0.85rem;
+      }
+      details.advanced > summary {
+        cursor: pointer;
+        font-weight: 650;
+        color: var(--muted);
+        user-select: none;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.15rem 0.45rem;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--accent) 18%, Canvas);
+        color: var(--accent);
+        vertical-align: middle;
+        margin-left: 0.35rem;
+      }
+      .done-box {
+        display: none;
+        border: 1px solid color-mix(in srgb, var(--ok) 35%, var(--border));
+        background: color-mix(in srgb, var(--ok) 10%, Canvas);
+        border-radius: 12px;
+        padding: 0.9rem 1rem;
+        margin-top: 1rem;
+      }
+      .done-box.show {
+        display: block;
+      }
+      .done-box h2 {
+        color: var(--ok);
+      }
+      code {
+        font-size: 0.88em;
+      }
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Realtime Subtitle Translator
+      <span class="badge">BYOK</span>
+    </h1>
+    <p class="hint">
+      在 YouTube 上把字幕翻成<strong>繁中</strong>。翻譯費用走<strong>你自己的
+      API key</strong>，金鑰只存在本機，不會上傳到本擴充功能作者。
+    </p>
+
+    <div class="card" id="howto">
+      <h2>使用方式（30 秒）</h2>
+      <ol class="steps">
+        <li>選翻譯服務，貼上你的 API key</li>
+        <li>按「測試並儲存」確認連線</li>
+        <li>打開 YouTube 影片，<strong>開啟 CC 字幕</strong>，按播放</li>
+      </ol>
+    </div>
+
+    <label class="field" for="providerId">翻譯服務</label>
+    <select id="providerId" aria-describedby="providerBlurb"></select>
+    <p class="provider-blurb" id="providerBlurb"></p>
+    <p class="muted" id="keyHelpWrap" hidden>
+      還沒有 key？
+      <a id="keyHelpLink" href="#" target="_blank" rel="noopener noreferrer"
+        >前往申請 →</a
+      >
+    </p>
+
+    <label class="field" for="apiKey">API key</label>
+    <input
+      id="apiKey"
+      type="password"
+      placeholder="sk-…"
+      autocomplete="off"
+      spellcheck="false"
+    />
+
+    <div id="customFields" class="hidden">
+      <label class="field" for="endpoint">Endpoint（chat/completions）</label>
+      <input
+        id="endpoint"
+        type="url"
+        placeholder="https://…/v1/chat/completions"
+        autocomplete="off"
+      />
+    </div>
+
+    <label class="field" for="model">模型</label>
+    <input id="model" type="text" placeholder="gpt-4o-mini" autocomplete="off" />
+
+    <div class="actions">
+      <button id="testSave" type="button">測試並儲存</button>
+      <button id="save" type="button" class="secondary">只儲存</button>
+    </div>
+    <div id="status" role="status"></div>
+
+    <div class="done-box" id="doneBox">
+      <h2>設定完成 ✓</h2>
+      <p class="muted" style="margin: 0.35rem 0 0">
+        請到 YouTube 開啟有字幕的影片，並<strong>打開 CC</strong>。翻譯會疊在畫面下方（預設只顯示繁中）。
+      </p>
+      <div class="actions">
+        <button id="openYoutube" type="button">開啟 YouTube</button>
+      </div>
+    </div>
+
+    <details class="advanced" id="advanced">
+      <summary>進階設定（變更後自動儲存）</summary>
+
+      <label class="field" for="targetLanguage">目標語言（寫進 prompt）</label>
+      <input id="targetLanguage" type="text" autocomplete="off" />
+
+      <label class="field" for="sourceLang">偏好字幕語言代碼</label>
+      <input id="sourceLang" type="text" placeholder="en" autocomplete="off" />
+
+      <div class="row">
+        <input id="enabled" type="checkbox" />
+        <label for="enabled">在 YouTube 觀看頁自動啟動</label>
+      </div>
+      <div class="row">
+        <input id="bilingual" type="checkbox" />
+        <label for="bilingual">顯示雙語（英文 + 繁中）</label>
+      </div>
+    </details>
+
+    <script type="module" src="../src/extension/optionsPage.ts"></script>
+  </body>
+</html>
