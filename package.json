@@ -18,7 +18,7 @@
   "devDependencies": {
     "happy-dom": "^20.10.6",
     "typescript": "^5.7.2",
-    "vitest": "^3.2.4",
+    "vitest": "^5.0.0",
     "wxt": "^0.20.11"
   },
   "overrides": {
