@@ -16,7 +16,7 @@
     "prepare": "wxt prepare"
   },
   "devDependencies": {
-    "happy-dom": "^20.10.6",
+    "happy-dom": "^21.0.4",
     "typescript": "^5.7.2",
     "vitest": "^3.2.4",
     "wxt": "^0.20.11"
